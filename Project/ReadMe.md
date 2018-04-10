@@ -4,3 +4,7 @@ RR, PS and SJF.
 Their comparative analysis was done and presented as graph plots based on criteria such as running time, throughput, number of context 
 switching, possibility of starvation etc. Also came up with the result that these kind of algorithms will not work in real time so, 
 implemented RMS and EDF scheduling algorithms which mainly depends on the deadline of jobs.
+
+Run using: gcc main.c -w -o main -lm -lpthread -lxlsxwriter
+
+lxlsxwriter library will be needed to plot diffrent graphs in excel.
