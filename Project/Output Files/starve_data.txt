@@ -1,0 +1,6 @@
+
+Algorithm: RR      Most Starved Process: P3      Wait Time (ms): 107
+Algorithm: FCFS    Most Starved Process: P4      Wait Time (ms): 152
+Algorithm: SJF     Most Starved Process: P2      Wait Time (ms): 77
+Algorithm: PS      Most Starved Process: P4      Wait Time (ms): 152
+Algorithm: RR      Most Starved Process: P4      Wait Time (ms): 45
