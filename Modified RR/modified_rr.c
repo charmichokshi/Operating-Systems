@@ -1,12 +1,5 @@
 // C program for implementation of RR scheduling
 
-/*
-code o/p: 7
-real o/p: 8
-
-*/
-
-
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -26,24 +19,17 @@ int findWaitingTime(int processes[], int n,
         rem_bt[i] =  bt[i];
  
     int t = 0; // Current time
-
     int cnt = 1;
-
     int cs=0;
-
     int pre = n-1;
-
     int print[MAX];
     int print_cnt = 0;
-
-    // int 
  
     // Keep traversing processes in round robin manner
     // until all of them are not done.
     while (1)
     {
         // bool done = true;
- 
         if(cnt == 1)
         {
             // Traverse all processes one by one repeatedly
@@ -54,8 +40,6 @@ int findWaitingTime(int processes[], int n,
                 // then only need to process further
                 if (rem_bt[i] > 0)
                 {
-                    // done = false; // There is a pending process
-     
                     if (rem_bt[i] > quantum)
                     {
                         // Increase the value of t i.e. shows
@@ -91,20 +75,12 @@ int findWaitingTime(int processes[], int n,
          quantum = quantum*2;
         }
 
-        
-        
-
         else
         {
 
             int i=0, pos=0, temp=0;
             int cnt_break=0;
-            // pre = n-1;
-            //sorting burst time in ascending order using selection sort
-        // printf("\n%d %d\n",pre,j);
-        // printf("**ji %d\n",processes[0]);
 
-            // pos=i;
             for(int j=i+1;j<n;j++)
             {
                 if (rem_bt[pos] == 0)
@@ -115,12 +91,9 @@ int findWaitingTime(int processes[], int n,
 
                 if (rem_bt[j] != 0)
                 {
-                    /* code */
-
                     if(rem_bt[j] < rem_bt[pos])
                     {
                         pos=j;
-                        // cs++;
                     }
                 }
             }
@@ -134,14 +107,9 @@ int findWaitingTime(int processes[], int n,
             }
             if (cnt_break == n)
             {
-                /* code */
                 break;
             }
-              
 
-                // else
-// printf("\nhi %d\n",cs);
-                
             if ((cnt == 2) && (processes[pos] != processes[n-1]))
             {
                 cs++;
@@ -151,45 +119,32 @@ int findWaitingTime(int processes[], int n,
             {
                 cs++;
             }
-
-// printf("\n***%d\n",pos+1 );
-
-
+         
                 i=0;
 
-                temp=bt[i];
-                bt[i]=bt[pos];
-                bt[pos]=temp;
-         
-                temp=processes[i];
-                processes[i]=processes[pos];
-                processes[pos]=temp;
+            temp=bt[i];
+            bt[i]=bt[pos];
+            bt[pos]=temp;
 
-                temp=rem_bt[i];
-                rem_bt[i]=rem_bt[pos];
-                rem_bt[pos]=temp;
-         
-                temp=wt[i];
-                wt[i]=wt[pos];
-                wt[pos]=temp;
+            temp=processes[i];
+            processes[i]=processes[pos];
+            processes[pos]=temp;
 
-                            print[print_cnt++]=processes[i];
+            temp=rem_bt[i];
+            rem_bt[i]=rem_bt[pos];
+            rem_bt[pos]=temp;
 
+            temp=wt[i];
+            wt[i]=wt[pos];
+            wt[pos]=temp;
 
-// for (int i = 0; i < n; ++i)
-// {
-//      code 
-//     printf("\n%d",processes[i]);
-// }
+            print[print_cnt++]=processes[i];
 
             // If burst time of a process is greater than 0
             // then only need to process further
-
             i=0;
             if (rem_bt[i] > 0)
-            {
-                    // done = false; // There is a pending process
- 
+            { 
                 if (rem_bt[i] > quantum)
                 {
                     // Increase the value of t i.e. shows
@@ -218,13 +173,8 @@ int findWaitingTime(int processes[], int n,
                     rem_bt[i] = 0;
                 }
             }
-
-
             else
                 break;
-
-
-
         }
     }
 
@@ -251,7 +201,6 @@ void findTurnAroundTime(int processes[], int n,
 }
  
 // Function to calculate average time
-
 void findavgTime(int processes[], int n, int bt[], int quantum)
 {
     int wt[n], tat[n], total_wt = 0, total_tat = 0;
@@ -315,7 +264,6 @@ void print_table(int processes[], int n, int burst_time[], int waiting_time[], i
         }
     }
 
-
     for(i=0; i<n; i++) {
     printf("| %2d  |     %2d     |      %2d      |        %2d       |\n"
            , processes[i], burst_time[i], waiting_time[i], turnaround_time[i]);
@@ -348,7 +296,6 @@ int main()
 
     printf("Enter time Quantum: ");
     scanf("%d", &quantum);
-
 
     findavgTime(processes, n, burst_time, quantum);
     return 0;
