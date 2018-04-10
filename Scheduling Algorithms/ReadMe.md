@@ -1,2 +1,1 @@
-Implementation of scheduling algorithms like Fist Come First Serve, Round Robin, Priority Scheduling, and Shortest Job First  
-with gantt-chart.
+Implementation of CPU scheduling algorithms like Fist Come First Serve, Round Robin, Priority Scheduling, and Shortest Job First and Real-time scheduling algorithms like Erliest Deadline First, and Rate Monotonic Scheduling with gantt-chart.
